@@ -1,0 +1,234 @@
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-BoldItalic.eot");
+  src: local("Lab Grotesque Bold Italic"), local("LabGrotesque-BoldItalic"), url("./fonts/LabGrotesque/LabGrotesque-BoldItalic.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-BoldItalic.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-Light.eot");
+  src: local("Lab Grotesque Light"), local("LabGrotesque-Light"), url("./fonts/LabGrotesque/LabGrotesque-Light.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-Light.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-MediumItalic.eot");
+  src: local("Lab Grotesque Medium Italic"), local("LabGrotesque-MediumItalic"), url("./fonts/LabGrotesque/LabGrotesque-MediumItalic.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-MediumItalic.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-Regular.eot");
+  src: local("Lab Grotesque Regular"), local("LabGrotesque-Regular"), url("./fonts/LabGrotesque/LabGrotesque-Regular.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-Regular.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-LightItalic.eot");
+  src: local("Lab Grotesque Light Italic"), local("LabGrotesque-LightItalic"), url("./fonts/LabGrotesque/LabGrotesque-LightItalic.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-LightItalic.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-Italic.eot");
+  src: local("Lab Grotesque Italic"), local("LabGrotesque-Italic"), url("./fonts/LabGrotesque/LabGrotesque-Italic.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-Italic.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-Black.eot");
+  src: local("Lab Grotesque Black"), local("LabGrotesque-Black"), url("./fonts/LabGrotesque/LabGrotesque-Black.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-Black.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-Medium.eot");
+  src: local("Lab Grotesque Medium"), local("LabGrotesque-Medium"), url("./fonts/LabGrotesque/LabGrotesque-Medium.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-Medium.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-BlackItalic.eot");
+  src: local("Lab Grotesque Black Italic"), local("LabGrotesque-BlackItalic"), url("./fonts/LabGrotesque/LabGrotesque-BlackItalic.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-BlackItalic.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque/LabGrotesque-Bold.eot");
+  src: local("Lab Grotesque Bold"), local("LabGrotesque-Bold"), url("./fonts/LabGrotesque/LabGrotesque-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/LabGrotesque/LabGrotesque-Bold.woff") format("woff"), url("./fonts/LabGrotesque/LabGrotesque-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Lab Grotesque";
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 801px) {
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+}
+body .container {
+  width: 100%;
+  position: relative;
+  color: rgb(51, 51, 51);
+}
+body .container header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 4%;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+body .container header .logo {
+  cursor: pointer;
+}
+body .container header .logo span {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+body .container header .logo img {
+  width: 25px;
+  padding-left: 3px;
+}
+body .container header nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+body .container header nav ul li {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+  font-weight: 600;
+}
+body .container header a {
+  background-color: #04ddb2;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-transform: capitalize;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+body .container main {
+  margin-top: 90px;
+}
+body .container main .hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+body .container main .hero p:nth-of-type(1) {
+  word-spacing: 14px;
+}
+body .container main .hero p span {
+  text-transform: capitalize;
+  font-size: 5rem;
+  font-weight: 900;
+}
+body .container main .hero p span:nth-of-type(2) {
+  color: #04ddb2;
+}
+body .container main .hero p:nth-of-type(2) {
+  font-size: 1.625rem;
+}
+body .container main .bigImage {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+body .container main .bigImage .collectionBackground {
+  display: flex;
+  justify-content: center;
+}
+body .container main .bigImage .collectionBackground img {
+  max-width: 75%;
+  border-radius: 40px;
+  cursor: pointer;
+}
+body .container main .train {
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+body .container main .train span {
+  font-size: 4rem;
+  font-weight: 900;
+}
+body .container main .train a {
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-transform: capitalize;
+  color: white;
+  width: 15%;
+  background-color: #04ddb2;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+body .container footer {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid;
+  margin: 60px 10%;
+  padding: 50px 0;
+}
+body .container footer > div .logo {
+  cursor: pointer;
+}
+body .container footer > div .logo span {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+body .container footer > div .logo img {
+  width: 20px;
+  padding-left: 3px;
+}
+body .container footer > div .text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 25px;
+}
+body .container footer > div > span {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+body .container footer > div > ul {
+  list-style-type: none;
+  text-transform: capitalize;
+}
+body .container footer .socials {
+  display: flex;
+  gap: 20px;
+}/*# sourceMappingURL=index.css.map */

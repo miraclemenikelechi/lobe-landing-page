@@ -1,0 +1,361 @@
+// ! breakpoints
+$breakpoints: ("tablet": 800px, "laptop": 801px);
+
+@mixin tablet {
+    @media (max-width: map-get($breakpoints, "tablet")) {
+        @content
+    }
+}
+
+;
+
+@mixin laptop {
+    @media (min-width: map-get($breakpoints, "laptop")) {
+        @content
+    }
+}
+
+;
+
+// @mixin breakpoint($bp:0) {
+//     @media (min-width: $bp) {
+//         @content
+//     }
+// }
+
+// ;
+
+// ? fonts
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-BoldItalic.eot');
+    src: local('Lab Grotesque Bold Italic'), local('LabGrotesque-BoldItalic'),
+        url('./fonts/LabGrotesque/LabGrotesque-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-BoldItalic.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-Light.eot');
+    src: local('Lab Grotesque Light'), local('LabGrotesque-Light'),
+        url('./fonts/LabGrotesque/LabGrotesque-Light.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-Light.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-MediumItalic.eot');
+    src: local('Lab Grotesque Medium Italic'), local('LabGrotesque-MediumItalic'),
+        url('./fonts/LabGrotesque/LabGrotesque-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-MediumItalic.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-Regular.eot');
+    src: local('Lab Grotesque Regular'), local('LabGrotesque-Regular'),
+        url('./fonts/LabGrotesque/LabGrotesque-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-Regular.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-LightItalic.eot');
+    src: local('Lab Grotesque Light Italic'), local('LabGrotesque-LightItalic'),
+        url('./fonts/LabGrotesque/LabGrotesque-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-LightItalic.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-Italic.eot');
+    src: local('Lab Grotesque Italic'), local('LabGrotesque-Italic'),
+        url('./fonts/LabGrotesque/LabGrotesque-Italic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-Italic.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-Black.eot');
+    src: local('Lab Grotesque Black'), local('LabGrotesque-Black'),
+        url('./fonts/LabGrotesque/LabGrotesque-Black.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-Black.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-Medium.eot');
+    src: local('Lab Grotesque Medium'), local('LabGrotesque-Medium'),
+        url('./fonts/LabGrotesque/LabGrotesque-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-Medium.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-BlackItalic.eot');
+    src: local('Lab Grotesque Black Italic'), local('LabGrotesque-BlackItalic'),
+        url('./fonts/LabGrotesque/LabGrotesque-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-BlackItalic.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    src: url('./fonts/LabGrotesque/LabGrotesque-Bold.eot');
+    src: local('Lab Grotesque Bold'), local('LabGrotesque-Bold'),
+        url('./fonts/LabGrotesque/LabGrotesque-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/LabGrotesque/LabGrotesque-Bold.woff') format('woff'),
+        url('./fonts/LabGrotesque/LabGrotesque-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+$background:rgb(255, 255, 255);
+$gray-text:rgb(51, 51, 51);
+$green-text:#04ddb2;
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Lab Grotesque";
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    // @include tablet {
+    //     background-color: rgb(106, 103, 206);
+    // }
+
+    @include laptop {
+        background-color: $background;
+    }
+
+    .container {
+        width: 100%;
+        position: relative;
+        color: $gray-text;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 4%;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+
+            .logo {
+                cursor: pointer;
+
+                span {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                }
+
+                img {
+                    width: 25px;
+                    padding-left: 3px;
+                }
+            }
+
+            nav {
+                ul {
+                    list-style-type: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 50px;
+
+                    li {
+                        text-transform: capitalize;
+                        font-size: 1.1rem;
+                        color: $gray-text;
+                        cursor: pointer;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            a {
+                background-color: $green-text;
+                padding: 15px 30px;
+                border-radius: 50px;
+                text-transform: capitalize;
+                color: white;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1.1rem;
+                cursor: pointer;
+            }
+
+            // hover font size will be 1.13 rem, text color .7 opacity
+        }
+
+        main {
+            margin-top: 90px;
+
+            .hero {
+                text-align: center;
+                padding: 50px 20px;
+
+                p {
+                    &:nth-of-type(1) {
+                        word-spacing: 14px;
+                    }
+
+                    span {
+                        text-transform: capitalize;
+                        font-size: 5rem;
+                        font-weight: 900;
+
+                        &:nth-of-type(2) {
+                            color: $green-text;
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        font-size: 1.625rem;
+                    }
+                }
+            }
+
+            .bigImage {
+                padding: 30px;
+                display: flex;
+                justify-content: center;
+
+                .collectionBackground {
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+                        max-width: 75%;
+                        border-radius: 40px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .train {
+                text-align: center;
+                padding: 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+
+                span {
+                    font-size: 4rem;
+                    font-weight: 900;
+                }
+
+                a {
+                    padding: 15px 30px;
+                    border-radius: 50px;
+                    text-transform: capitalize;
+                    color: white;
+                    width: 15%;
+                    background-color: $green-text;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 1.25rem;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-evenly;
+            border-top: 1px solid;
+            margin: 60px 10%;
+            padding: 50px 0;
+
+            >div {
+                .logo {
+                    cursor: pointer;
+
+                    span {
+                        font-size: 1.35rem;
+                        font-weight: 700;
+                        text-transform: lowercase;
+                    }
+
+                    img {
+                        width: 20px;
+                        padding-left: 3px;
+                    }
+                }
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+                    padding-top: 25px;
+                }
+
+                >span {
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+
+                >ul {
+                    list-style-type: none;
+                    text-transform: capitalize;
+                }
+
+            }
+
+            .socials {
+                display: flex;
+                gap: 20px;
+            }
+        }
+
+
+
+
+        @include tablet {
+            // &::after {
+            //     content: "tablet view";
+            // }
+        }
+
+        @include laptop {
+            // &::after {
+            //     content: "laptop view";
+            // }
+        }
+    }
+}
