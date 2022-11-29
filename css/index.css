@@ -100,6 +100,10 @@ body .container header {
   position: fixed;
   top: 0;
   width: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  z-index: 1;
 }
 body .container header .logo {
   cursor: pointer;
@@ -121,9 +125,14 @@ body .container header nav ul {
 body .container header nav ul li {
   text-transform: capitalize;
   font-size: 1.1rem;
-  color: rgb(51, 51, 51);
+  color: rgba(51, 51, 51, 0.7);
   cursor: pointer;
   font-weight: 600;
+  transition: all ease 0.3s;
+}
+body .container header nav ul li:hover {
+  color: rgb(51, 51, 51);
+  scale: 1.1;
 }
 body .container header a {
   background-color: #04ddb2;
@@ -134,7 +143,11 @@ body .container header a {
   text-decoration: none;
   font-weight: 700;
   font-size: 1.1rem;
+  transition: all ease 0.2s;
   cursor: pointer;
+}
+body .container header a:hover {
+  scale: 1.05;
 }
 body .container main {
   margin-top: 90px;
@@ -170,6 +183,11 @@ body .container main .bigImage .collectionBackground img {
   max-width: 75%;
   border-radius: 40px;
   cursor: pointer;
+  transition: all ease-in-out 0.23s;
+}
+body .container main .bigImage .collectionBackground img:hover {
+  box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.15);
+  scale: 1.01;
 }
 body .container main .train {
   text-align: center;
@@ -194,13 +212,18 @@ body .container main .train a {
   font-weight: 700;
   font-size: 1.25rem;
   cursor: pointer;
+  transition: all ease 0.2s;
+}
+body .container main .train a:hover {
+  scale: 1.02;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 body .container footer {
   display: flex;
   justify-content: space-evenly;
-  border-top: 1px solid;
-  margin: 60px 10%;
-  padding: 50px 0;
+  border-top: 1px solid rgba(51, 51, 51, 0.3);
+  margin: 70px 10%;
+  padding: 60px 0;
 }
 body .container footer > div .logo {
   cursor: pointer;
@@ -228,7 +251,21 @@ body .container footer > div > ul {
   list-style-type: none;
   text-transform: capitalize;
 }
+body .container footer > div > ul li {
+  transition: all ease 0.25s;
+  cursor: pointer;
+}
+body .container footer > div > ul li:hover {
+  scale: 1.05;
+}
 body .container footer .socials {
   display: flex;
   gap: 20px;
+}
+body .container footer .socials box-icon {
+  transition: all ease 0.25s;
+  cursor: pointer;
+}
+body .container footer .socials box-icon:hover {
+  scale: 1.2;
 }/*# sourceMappingURL=index.css.map */
