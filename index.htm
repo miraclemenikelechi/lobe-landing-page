@@ -17,16 +17,27 @@
                 <span>lobe</span>
                 <img src="./images/favicon.ico" alt="logo">
             </div>
-            <nav>
+            <nav role="navigation">
+                <input type="checkbox">
                 <ul>
                     <li>overview</li>
                     <li>examples</li>
-                    <li>tour</li>
+                    <li class="active">tour</li>
                     <li>blog</li>
                     <li>help</li>
                 </ul>
+                <div>
+                    <input type="checkbox">
+                    <a>download</a>
+                </div>
             </nav>
             <a>download</a>
+            <button class="hamburger">
+                <input type="checkbox" onclick="mobileMenu(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </header>
         <main>
             <section class="hero">
@@ -75,6 +86,7 @@
                     <li>notice</li>
                     <li>license</li>
                     <li>press inquiry</li>
+                    }
                     <li>press images</li>
                 </ul>
             </div>
@@ -95,6 +107,14 @@
         </footer>
     </section>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script>
+        const nav = document.querySelectorAll("input[type='checkbox']");
+        mobileMenu = (checkboxes) => {
+            for (let i = 0; i < nav.length; i++) {
+                nav[i].checked = checkboxes.checked
+            }
+        };
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 // ! breakpoints
-$breakpoints: ("tablet": 800px, "laptop": 801px);
+$breakpoints: ("tablet": 970px, "laptop": 971px);
 
 @mixin tablet {
     @media (max-width: map-get($breakpoints, "tablet")) {
@@ -17,13 +17,13 @@ $breakpoints: ("tablet": 800px, "laptop": 801px);
 
 ;
 
-// @mixin breakpoint($bp:0) {
-//     @media (min-width: $bp) {
-//         @content
-//     }
-// }
+@mixin breakpoint($bp:0) {
+    @media (min-width: $bp) {
+        @content
+    }
+}
 
-// ;
+;
 
 // ? fonts
 @font-face {
@@ -154,14 +154,6 @@ body {
     align-items: center;
     justify-content: center;
 
-    // @include tablet {
-    //     background-color: rgb(106, 103, 206);
-    // }
-
-    @include laptop {
-        background-color: $background;
-    }
-
     .container {
         width: 100%;
         position: relative;
@@ -177,7 +169,7 @@ body {
             width: 100%;
             background: rgb(255, 255, 255, .75);
             backdrop-filter: blur(40px);
-            z-index: 1;
+            z-index: 2;
 
             .logo {
                 cursor: pointer;
@@ -194,11 +186,36 @@ body {
             }
 
             nav {
+                input {
+                    display: none;
+
+                    &:checked~ul {
+                        transform: (none);
+                    }
+                }
+
                 ul {
                     list-style-type: none;
                     display: flex;
                     align-items: center;
                     gap: 50px;
+                    transform: translate(0%, -150%);
+                    transition: .3s;
+
+                    @include tablet() {
+                        flex-direction: column;
+                        border-top: .5px solid rgb(51, 51, 51, .15);
+                        position: absolute;
+                        width: 100%;
+                        height: 450px;
+                        left: 0;
+                        top: 75px;
+                        align-items: flex-start;
+                        padding: 4% 30px;
+                        background-color: rgb(255, 255, 255, .75);
+                        backdrop-filter: blur(10px);
+                        box-shadow: 0px 50px 50px 5px rgb(0, 0, 0, .25);
+                    }
 
                     li {
                         text-transform: capitalize;
@@ -211,6 +228,35 @@ body {
                         &:hover {
                             color: $gray-text;
                             scale: 1.1;
+                        }
+                    }
+
+                    .active {
+                        color: $gray-text;
+                    }
+                }
+
+                div {
+                    display: none;
+
+                    input {
+                        &:checked~a {
+                            display: block;
+                        }
+                    }
+
+                    @include tablet() {
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        bottom: -420px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        a {
+                            width: 90%;
+                            text-align: center;
                         }
                     }
                 }
@@ -228,8 +274,88 @@ body {
                 transition: all ease .2s;
                 cursor: pointer;
 
+                @include tablet() {
+                    display: none;
+                }
+
                 &:hover {
                     scale: 1.05;
+                }
+            }
+
+            .hamburger {
+                display: none;
+
+                @include tablet() {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 3px;
+                    position: relative;
+                    user-select: none;
+                    appearance: none;
+                    height: 35px;
+                    width: 35px;
+                    background-color: rgb(238, 240, 242);
+                    border-radius: 50%;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+
+                    input {
+                        cursor: pointer;
+                        position: absolute;
+                        display: block;
+                        width: inherit;
+                        height: 100%;
+                        z-index: 1;
+                        opacity: 0;
+                        -webkit-touch-callout: none;
+
+                        &:checked {
+                            ~span {
+                                transform: rotate(45deg) translate(2.5px, -1px);
+
+                                &:nth-child(3) {
+                                    opacity: 0;
+                                    transform: rotate(0deg) scale(0.2, 0.2);
+                                }
+
+                                &:nth-child(4) {
+                                    transform: rotate(-45deg) translate(.5px, 0px);
+                                }
+                            }
+                        }
+                    }
+
+                    // }
+                    // &:hover {
+                    //     span {
+                    //         &:nth-child(3) {
+                    //             transform: translateX(10px);
+                    //         }
+                    //     }
+                    // }
+
+                    span {
+                        &:nth-child(1) {
+                            transform-origin: 0% 0%;
+                        }
+
+                        &:nth-child(3) {
+                            transform-origin: 0% 100%;
+                        }
+
+                        display: block;
+                        width: 20px;
+                        height: 2px;
+                        position: relative;
+                        border-radius: 10px;
+                        transform-origin: 4px 0;
+                        transition: .3s;
+                        background-color: $gray-text;
+                    }
                 }
             }
         }
