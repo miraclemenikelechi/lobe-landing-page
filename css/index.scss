@@ -375,7 +375,9 @@ body {
             background-color: rgb(255, 255, 255, .75);
             backdrop-filter: blur(20px);
             display: flex;
-            align-items: flex-start;
+            // align-items: flex-start;
+            // ! media qurey
+            align-items: center;
             justify-content: center;
             position: fixed;
             width: 100%;
@@ -387,7 +389,7 @@ body {
                 margin-right: auto;
 
                 span {
-                    font-size: 1.5rem;
+                    font-size: 2rem;
                     font-weight: 900;
                 }
 
@@ -427,13 +429,55 @@ body {
 
             nav {
                 display: flex;
-                width: max(60%, 540px);
+                width: max(63%, 750px);
                 justify-content: space-between;
+                align-items: center;
 
                 ul {
                     display: flex;
                     gap: 50px;
                     list-style: none;
+
+                    li {
+                        font-size: 1.125rem;
+                        color: rgb(118, 118, 118);
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        cursor: pointer;
+                        transition: .3s;
+
+                        &.active {
+                            color: $gray-text;
+                        }
+
+                        &:hover {
+                            color: $gray-text;
+                            scale: 1.05;
+                        }
+                    }
+                }
+
+                div {
+                    height: 50px;
+                    border-radius: 50px;
+                    width: 120px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    background-color: $green-text;
+                    transition: .3s ease all;
+
+                    &:hover {
+                        scale: 1.05;
+                    }
+
+                    a {
+                        font-size: 1.125rem;
+                        font-weight: 700;
+                        text-transform: capitalize;
+                        color: white;
+                    }
                 }
 
                 &.active {
@@ -473,7 +517,7 @@ body {
             }
 
             button {
-                // display: none;
+                display: none;
             }
 
             // .mobileMenu {
