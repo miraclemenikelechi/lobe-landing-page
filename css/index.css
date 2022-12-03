@@ -87,179 +87,118 @@ body .container {
   position: relative;
   color: rgb(51, 51, 51);
 }
+body .container > input {
+  display: none;
+}
+body .container > input:checked ~ header {
+  height: 650px;
+  box-shadow: 0px 50px 50px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
 body .container header {
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   display: flex;
-  justify-content: space-between;
-  padding: 20px 4%;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   position: fixed;
-  top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.75);
-  -webkit-backdrop-filter: blur(40px);
-          backdrop-filter: blur(40px);
-  z-index: 2;
+  z-index: 100;
+  padding: 23px 5%;
+  transition: 0.2s;
 }
 body .container header .logo {
-  cursor: pointer;
+  margin-right: auto;
 }
 body .container header .logo span {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 body .container header .logo img {
-  width: 25px;
   padding-left: 3px;
+  width: 20px;
 }
-body .container header nav input {
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body .container header > input {
   display: none;
 }
-body .container header nav input:checked ~ ul {
-  transform: none;
+body .container header > input:checked ~ nav {
+  -webkit-animation: fade-in 1s forwards;
+          animation: fade-in 1s forwards;
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body .container header nav {
+  display: flex;
+  width: max(60%, 540px);
+  justify-content: space-between;
 }
 body .container header nav ul {
-  list-style-type: none;
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+body .container header nav.active {
+  position: fixed;
+  top: 100px;
+  border: 2px solid red;
+  width: 100%;
+  padding: 1% 5%;
+  flex-direction: column;
+  gap: 50px;
+  opacity: 0;
+  -webkit-animation: fade-out 0.1s forwards;
+          animation: fade-out 0.1s forwards;
+  padding-bottom: 80px;
+}
+body .container header nav.active ul {
+  flex-direction: column;
+  gap: 60px;
+}
+body .container header nav.active ul li {
+  font-size: 1.25rem;
+}
+body .container header nav.active div {
   display: flex;
   align-items: center;
-  gap: 50px;
-  transform: translate(0%, -150%);
-  transition: 0.3s;
-}
-@media (max-width: 970px) {
-  body .container header nav ul {
-    flex-direction: column;
-    border-top: 0.5px solid rgba(51, 51, 51, 0.15);
-    position: absolute;
-    width: 100%;
-    height: 450px;
-    left: 0;
-    top: 75px;
-    align-items: flex-start;
-    padding: 4% 30px;
-    background-color: rgba(255, 255, 255, 0.75);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-    box-shadow: 0px 50px 50px 5px rgba(0, 0, 0, 0.25);
-  }
-}
-body .container header nav ul li {
-  text-transform: capitalize;
-  font-size: 1.1rem;
-  color: rgba(51, 51, 51, 0.7);
-  cursor: pointer;
-  font-weight: 600;
-  transition: all ease 0.3s;
-}
-body .container header nav ul li:hover {
-  color: rgb(51, 51, 51);
-  scale: 1.1;
-}
-body .container header nav ul .active {
-  color: rgb(51, 51, 51);
-}
-body .container header nav div {
-  display: none;
-}
-body .container header nav div input:checked ~ a {
-  display: block;
-}
-@media (max-width: 970px) {
-  body .container header nav div {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: -420px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  body .container header nav div a {
-    width: 90%;
-    text-align: center;
-  }
-}
-body .container header a {
+  justify-content: center;
   background-color: #04ddb2;
-  padding: 15px 30px;
+  height: 50px;
   border-radius: 50px;
-  text-transform: capitalize;
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all ease 0.2s;
-  cursor: pointer;
 }
-@media (max-width: 970px) {
-  body .container header a {
-    display: none;
-  }
-}
-body .container header a:hover {
-  scale: 1.05;
-}
-body .container header .hamburger {
-  display: none;
-}
-@media (max-width: 970px) {
-  body .container header .hamburger {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    position: relative;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    height: 35px;
-    width: 35px;
-    background-color: rgb(238, 240, 242);
-    border-radius: 50%;
-    outline: none;
-    border: none;
-    cursor: pointer;
-  }
-  body .container header .hamburger input {
-    cursor: pointer;
-    position: absolute;
-    display: block;
-    width: inherit;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-    -webkit-touch-callout: none;
-  }
-  body .container header .hamburger input:checked ~ span {
-    transform: rotate(45deg) translate(2.5px, -1px);
-  }
-  body .container header .hamburger input:checked ~ span:nth-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-  }
-  body .container header .hamburger input:checked ~ span:nth-child(4) {
-    transform: rotate(-45deg) translate(0.5px, 0px);
-  }
-  body .container header .hamburger span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    position: relative;
-    border-radius: 10px;
-    transform-origin: 4px 0;
-    transition: 0.3s;
-    background-color: rgb(51, 51, 51);
-  }
-  body .container header .hamburger span:nth-child(1) {
-    transform-origin: 0% 0%;
-  }
-  body .container header .hamburger span:nth-child(3) {
-    transform-origin: 0% 100%;
-  }
+body .container header nav.active div a {
+  font-size: 1.25rem;
 }
 body .container main {
   margin-top: 90px;
@@ -280,7 +219,7 @@ body .container main .hero p span:nth-of-type(2) {
   color: #04ddb2;
 }
 body .container main .hero p:nth-of-type(2) {
-  font-size: 1.625rem;
+  font-size: 2rem;
 }
 body .container main .bigImage {
   padding: 30px;
@@ -292,13 +231,13 @@ body .container main .bigImage .collectionBackground {
   justify-content: center;
 }
 body .container main .bigImage .collectionBackground img {
-  max-width: 75%;
-  border-radius: 40px;
+  max-width: 64%;
+  border-radius: 20px;
   cursor: pointer;
   transition: all ease-in-out 0.23s;
 }
 body .container main .bigImage .collectionBackground img:hover {
-  box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 60px 100px 0px rgba(0, 0, 0, 0.15);
   scale: 1.01;
 }
 body .container main .train {
@@ -310,21 +249,30 @@ body .container main .train {
   gap: 30px;
 }
 body .container main .train span {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 900;
 }
 body .container main .train a {
-  padding: 15px 30px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50px;
-  text-transform: capitalize;
-  color: white;
-  width: 15%;
+  width: 200px;
   background-color: #04ddb2;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: all ease 0.2s;
+}
+body .container main .train a button {
+  font-weight: 700;
+  text-transform: capitalize;
+  color: white;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  font-size: 1.5rem;
 }
 body .container main .train a:hover {
   scale: 1.02;
@@ -334,14 +282,14 @@ body .container footer {
   display: flex;
   justify-content: space-evenly;
   border-top: 1px solid rgba(51, 51, 51, 0.3);
-  margin: 70px 10%;
-  padding: 60px 0;
+  margin: 100px 10%;
+  padding: 100px 0;
 }
 body .container footer > div .logo {
   cursor: pointer;
 }
 body .container footer > div .logo span {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
   text-transform: lowercase;
 }
@@ -352,18 +300,23 @@ body .container footer > div .logo img {
 body .container footer > div .text {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   padding-top: 25px;
+}
+body .container footer > div .text span {
+  font-size: 1.25rem;
 }
 body .container footer > div > span {
   font-weight: 700;
   text-transform: capitalize;
+  font-size: 1.25rem;
 }
 body .container footer > div > ul {
   list-style-type: none;
   text-transform: capitalize;
 }
 body .container footer > div > ul li {
+  font-size: 1.25rem;
   transition: all ease 0.25s;
   cursor: pointer;
 }

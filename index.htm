@@ -12,13 +12,14 @@
 
 <body>
     <section class="container">
+        <input type="checkbox">
         <header>
             <div class="logo">
                 <span>lobe</span>
                 <img src="./images/favicon.ico" alt="logo">
             </div>
-            <nav role="navigation">
-                <input type="checkbox">
+            <input type="checkbox">
+            <nav role="navigation" class="active">
                 <ul>
                     <li>overview</li>
                     <li>examples</li>
@@ -27,17 +28,23 @@
                     <li>help</li>
                 </ul>
                 <div>
-                    <input type="checkbox">
                     <a>download</a>
                 </div>
             </nav>
-            <a>download</a>
+            <!-- <a>download</a> -->
             <button class="hamburger">
                 <input type="checkbox" onclick="mobileMenu(this)">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <!-- <ul class="mobileMenu">
+                <li>overview</li>
+                <li>examples</li>
+                <li class="active">tour</li>
+                <li>blog</li>
+                <li>help</li>
+            </ul> -->
         </header>
         <main>
             <section class="hero">
@@ -56,7 +63,9 @@
             </section>
             <section class="train">
                 <span>Train your app <br> with Lobe</span>
-                <a>download</a>
+                <a>
+                    <button>download</button>
+                </a>
             </section>
         </main>
         <footer>
@@ -86,7 +95,6 @@
                     <li>notice</li>
                     <li>license</li>
                     <li>press inquiry</li>
-                    }
                     <li>press images</li>
                 </ul>
             </div>
